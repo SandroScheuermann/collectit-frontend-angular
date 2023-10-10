@@ -1,0 +1,22 @@
+.defaultinput {
+    font-family: 'Ubuntu';
+    padding: 10px 15px;
+    border: 1px solid white;
+    border-radius: 15px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+    width: 300px;
+    height: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.defaultinput::placeholder{
+  opacity: 0.55;
+}
+
+.defaultinput:focus {
+    border-color: #007BFF;
+}
+

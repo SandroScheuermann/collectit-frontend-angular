@@ -1,0 +1,15 @@
+<div class="pagina">
+  <div class="input-container">
+
+    <p class="login-phrase">Login</p>
+
+    <app-defaultinput class="email-input" placeholder="Email" type="email"></app-defaultinput>
+    <app-passwordinput class="password-input"> </app-passwordinput>
+
+    <app-defaultbutton buttonClass="confirm" buttonText="Confirm"></app-defaultbutton>
+    <div class="phrase-container">
+      <p class="notregistered-phrase">Not registered?</p>
+      <p class="register-phrase" (click)="redirectToRegister()">Register now!</p>
+    </div>
+  </div>
+</div>

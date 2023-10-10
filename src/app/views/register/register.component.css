@@ -1,0 +1,43 @@
+.pagina{
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+}
+
+.input-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  flex-grow: 1;
+  gap: 20px;
+}
+
+.phrase-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+  gap: 5px;
+}
+
+.register-phrase {
+    font-size: 40px;
+    text-align: center;
+}
+
+.register-button {
+  height: 1000px;
+}
+
+.alreadyregistered-phrase{
+  color : gray;
+  opacity: 0.6;
+}
+
+.login-phrase{
+  cursor: pointer;
+  color: white;
+}

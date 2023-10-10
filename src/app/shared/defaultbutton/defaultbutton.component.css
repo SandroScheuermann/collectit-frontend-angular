@@ -1,0 +1,49 @@
+.default-button{
+  background: linear-gradient(to right, white 50%, #351F39 50%);
+  background-size: 200% 100%;
+  background-position: 100% 0;
+
+  color: white;
+
+  border: none;
+  border-radius: 65px;
+
+  cursor: pointer;
+
+  font-family: "Ubuntu";
+
+  transition: background-position 0.5s;
+
+  margin-top: 10px;
+  width: 350px;
+  height: 80px;
+  font-size: 35px;
+}
+
+.default-button.confirm{
+  margin-top: 10px;
+  width: 170px;
+  height: 50px;
+  font-size: 21px;
+  border-radius: 25px;
+}
+
+.default-button.medium{
+  margin-top: 10px;
+  width: 280px;
+  height: 64px;
+  font-size: 28px;
+}
+
+.default-button.small{
+  margin-top: 10px;
+  width: 210px;
+  height: 48px;
+  font-size: 21px;
+}
+
+.default-button:hover {
+  background-color: white;
+  color: #351F39;
+  background-position: 0 0;
+}

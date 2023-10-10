@@ -1,0 +1,22 @@
+.route-container {
+  position: relative;
+  min-height: 100vh; /* Ou outro valor que se ajuste ao seu layout */
+}
+
+span {
+  font-family: 'Ubuntu';
+  background-color: #53354A;
+  color: white;
+}
+
+html, body {
+    font-family: 'Ubuntu';
+    height:100%;
+    background-color: #53354A;
+    color: white;
+}
+
+button {
+    background-color: white;
+    color: #351F39; /* Cor do texto dentro do botão */
+}

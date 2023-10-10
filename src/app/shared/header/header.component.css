@@ -1,0 +1,30 @@
+body {
+    font-family: Ubuntu;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+header {
+    height: 100px;
+    background-color: #53354A;
+    position: relative;
+    padding: 0 1%;
+}
+
+header::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 1%;
+    right: 0;
+    height: 1px;
+    background-color: #351F39;
+    opacity: 0.5;
+}
+
+.logo {
+    width: 175px;
+    height: auto;
+    cursor: pointer;
+}
