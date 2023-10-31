@@ -1,8 +1,7 @@
 <div class="page">
-
   <app-header></app-header>
-
-  <div class="route-container">
+  <app-microloader></app-microloader>
+  <div [ngClass]="(isMicroLoading$ | async) ? 'blur-content' : 'no-blur-content'" class="route-container">
     <div [@routeAnimations]="prepareRoute(outlet)">
       <router-outlet #outlet="outlet"></router-outlet>
     </div>

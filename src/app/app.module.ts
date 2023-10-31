@@ -16,6 +16,7 @@ import { RegisterComponent } from './views/register/register.component';
 import { DefaultbuttonComponent } from './shared/defaultbutton/defaultbutton.component';
 import { PasswordinputComponent } from './shared/passwordinput/passwordinput.component';
 import { LoginComponent } from './views/login/login.component';
+import { MicroLoaderComponent } from './animations/microloader/microloader.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoginComponent } from './views/login/login.component';
     DefaultbuttonComponent,
     PasswordinputComponent,
     LoginComponent,
+    MicroLoaderComponent
   ],
   imports: [
     BrowserModule,

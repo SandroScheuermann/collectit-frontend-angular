@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { MicroLoadingService } from 'src/app/animations/microloader/service/microloading.service';
 
 @Component({
   selector: 'app-home',
@@ -8,10 +9,17 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private microLoadingService: MicroLoadingService) {
   }
 
-  redirecionarParaRegistro(){
-    this.router.navigate(['/register'] );
+  redirecionarParaRegistro() {
+
+    this.microLoadingService.show();
+    setTimeout(() => {
+      console.log("fazendo sexo");
+      this.microLoadingService.hide();
+    }, 2000);
+
+    //this.router.navigate(['/register'] );
   }
 }

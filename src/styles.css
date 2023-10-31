@@ -3,6 +3,16 @@
   min-height: 100vh; /* Ou outro valor que se ajuste ao seu layout */
 }
 
+.blur-content{
+  filter: blur(10px);
+  transition: filter 0.3s ease;
+}
+
+.no-blur-content {
+  filter: blur(0px);
+  transition: filter 0.3s ease;
+}
+
 span {
   font-family: 'Ubuntu';
   background-color: #53354A;
