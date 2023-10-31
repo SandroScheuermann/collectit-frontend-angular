@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -9,14 +10,27 @@ import { FormGroup, FormControl } from '@angular/forms';
 })
 export class RegisterComponent {
 
-  formGroup: FormGroup;
+  inputGroup: FormGroup;
 
-  constructor(private router: Router) {
-    this.formGroup = new FormGroup({
-      'nameInput': new FormControl(),
-      'emailInput': new FormControl(),
-      'passwordInput': new FormControl(),
+  constructor(private router: Router, private authService: AuthService) {
+    this.inputGroup = new FormGroup({
+      'name-input': new FormControl(),
+      'email-input': new FormControl(),
+      'password-input': new FormControl(),
     })
+  }
+
+  register() {
+    const name = this.inputGroup.get('name-input')?.value;
+    const email = this.inputGroup.get('email-input')?.value;
+    const password = this.inputGroup.get('password-input')?.value;
+
+    this.authService.register(name, email, password).subscribe({
+      next: () => { },
+      error: () => { },
+      complete: () => { }
+    });
+
   }
 
   redirectToLogin() {
