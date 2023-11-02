@@ -1,6 +1,11 @@
+.input-wrapper{
+  position: relative;
+}
+
 .defaultinput {
     font-family: 'Ubuntu';
     padding: 10px 15px;
+    padding-right: 30px;
     border: 1px solid white;
     border-radius: 15px;
     font-size: 16px;
@@ -12,11 +17,68 @@
     margin-bottom: 20px;
 }
 
+.defaultinput.invalid{
+  border-color: red;
+}
+
 .defaultinput::placeholder{
-  opacity: 0.55;
+  opacity: 0.55
 }
 
 .defaultinput:focus {
-    border-color: #007BFF;
+  border-color: #007BFF;
 }
 
+.tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 0;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(200, 0, 0, 1);
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 9999;
+  width: max-content;
+  text-align: center;
+  font-size: 13px;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  bottom: -9.5px;
+  left: 77%;
+  border-width: 5px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.3) transparent transparent transparent;
+  z-index: 9999;
+}
+
+.error-image{
+  opacity: 0.5;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+
+.error-image{
+  opacity: 0.5;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 10px;
+  top: 6px;
+}
+
+.toggle-password-icon{
+  opacity: 0.5;
+  width: 30px;
+  height: 30px;
+
+  position: absolute;
+  right: 10px;
+  top: 6px;
+}

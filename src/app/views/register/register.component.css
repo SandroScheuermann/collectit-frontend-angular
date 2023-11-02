@@ -41,3 +41,7 @@
   cursor: pointer;
   color: white;
 }
+
+.request-error-phrase{
+  color: rgba(200, 0, 0, 1);
+}

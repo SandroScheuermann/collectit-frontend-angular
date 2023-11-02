@@ -14,9 +14,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { DefaultinputComponent } from './shared/defaultinput/defaultinput.component';
 import { RegisterComponent } from './views/register/register.component';
 import { DefaultbuttonComponent } from './shared/defaultbutton/defaultbutton.component';
-import { PasswordinputComponent } from './shared/passwordinput/passwordinput.component';
 import { LoginComponent } from './views/login/login.component';
 import { MicroLoaderComponent } from './animations/microloader/microloader.component';
+import { AnimatedbackgroundComponent } from './animations/animatedbackground/animatedbackground.component';
 
 @NgModule({
   declarations: [
@@ -28,9 +28,9 @@ import { MicroLoaderComponent } from './animations/microloader/microloader.compo
     DefaultinputComponent,
     RegisterComponent,
     DefaultbuttonComponent,
-    PasswordinputComponent,
     LoginComponent,
-    MicroLoaderComponent
+    MicroLoaderComponent,
+    AnimatedbackgroundComponent
   ],
   imports: [
     BrowserModule,

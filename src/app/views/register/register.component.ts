@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from './services/auth.service';
+import { MicroLoadingService } from 'src/app/animations/microloader/service/microloading.service';
+import { PasswordValidators } from 'ngx-validators';
 
 @Component({
   selector: 'app-register',
@@ -10,30 +12,66 @@ import { AuthService } from './services/auth.service';
 })
 export class RegisterComponent {
 
+  errorMessage: string = '';
   inputGroup: FormGroup;
 
-  constructor(private router: Router, private authService: AuthService) {
+  nameValidators = [Validators.required, Validators.minLength(4)];
+  nameValidationMessages = {
+    required: 'Username is required.',
+    minlength: 'Name must be at least 4 characters'
+  };
+
+  emailValidators = [Validators.required, Validators.email]
+  emailValidationMessages = {
+    required: 'Email is required',
+    email: 'Incorrect email format'
+  };
+
+  passwordValidators = [
+    Validators.required,
+    PasswordValidators.repeatCharacterRegexRule(4),
+    PasswordValidators.alphabeticalCharacterRule(1),
+    PasswordValidators.digitCharacterRule(1),
+    PasswordValidators.lowercaseCharacterRule(1),
+    PasswordValidators.uppercaseCharacterRule(1),
+    PasswordValidators.specialCharacterRule(1)];
+
+  passwordValidationMessages = {
+    required: 'Password is required.',
+    repeatCharacterRegexRule: 'Password should not contain the same character repeated more than 4 times.',
+    alphabeticalCharacterRule: 'Password must contain at least 1 letter.',
+    digitCharacterRule: 'Password must contain at least 1 number.',
+    lowercaseCharacterRule: 'Password must contain at least 1 lowercase letter.',
+    uppercaseCharacterRule: 'Password must contain at least 1 uppercase letter.',
+    specialCharacterRule: 'Password must contain at least 1 special character.'
+  };
+
+  constructor(private router: Router, private authService: AuthService, private microLoadingService: MicroLoadingService) {
     this.inputGroup = new FormGroup({
-      'name-input': new FormControl(),
-      'email-input': new FormControl(),
-      'password-input': new FormControl(),
+      'name-input': new FormControl('', this.nameValidators),
+      'email-input': new FormControl('', this.emailValidators),
+      'password-input': new FormControl('', this.passwordValidators),
     })
   }
 
   register() {
-    const name = this.inputGroup.get('name-input')?.value;
-    const email = this.inputGroup.get('email-input')?.value;
-    const password = this.inputGroup.get('password-input')?.value;
+    if (this.inputGroup.valid) {
 
-    this.authService.register(name, email, password).subscribe({
-      next: () => { },
-      error: () => { },
-      complete: () => { }
-    });
+      const name = this.inputGroup.get('name-input')?.value;
+      const email = this.inputGroup.get('email-input')?.value;
+      const password = this.inputGroup.get('password-input')?.value;
 
+      this.microLoadingService.show();
+
+      this.authService.register(name, email, password).subscribe({
+        error: (err) => { this.microLoadingService.hide(), this.errorMessage = err.error },
+        complete: () => { this.microLoadingService.hide(), this.redirectToLogin() }
+      });
+    }
   }
 
   redirectToLogin() {
     this.router.navigate(['/login']);
   }
 }
+

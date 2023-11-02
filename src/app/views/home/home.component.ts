@@ -13,13 +13,6 @@ export class HomeComponent {
   }
 
   redirecionarParaRegistro() {
-
-    this.microLoadingService.show();
-    setTimeout(() => {
-      console.log("fazendo sexo");
-      this.microLoadingService.hide();
-    }, 2000);
-
-    //this.router.navigate(['/register'] );
+    this.router.navigate(['/register']);
   }
 }

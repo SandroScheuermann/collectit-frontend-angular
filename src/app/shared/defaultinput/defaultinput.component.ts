@@ -1,5 +1,5 @@
 import { Component, Input, forwardRef } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { AbstractControl, ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
   selector: 'app-defaultinput',
@@ -16,10 +16,19 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class DefaultinputComponent implements ControlValueAccessor {
   @Input() placeholder: string = '';
   @Input() type: string = '';
+  @Input() control: AbstractControl | null = null;
+  @Input() validationMessages: { [key: string]: string } = {};
 
+  showPasswordImage = './assets/password-show.svg'
+  hidePasswordImage = './assets/password-hide.svg'
+  passwordIconSource = this.hidePasswordImage;
+  isPasswordVisible = false;
   value!: string;
   onChange!: (value: string) => void;
   onTouched!: () => void;
+  showValidationMessage: boolean = false;
+
+  iconSource = './assets/validation-error.svg'
 
   writeValue(value: string): void {
     this.value = value;
@@ -37,5 +46,25 @@ export class DefaultinputComponent implements ControlValueAccessor {
     this.value = value;
     this.onChange(value);
     this.onTouched();
+  }
+
+  get validationMessage(): string {
+    if (this.control) {
+      for (const errorKey in this.control.errors) {
+        if (this.control.errors.hasOwnProperty(errorKey) && this.control.touched) {
+          return this.validationMessages[errorKey] || 'Campo inválido';
+        }
+      }
+    }
+    return '';
+  }
+
+  togglePasswordVisibility(){
+    this.isPasswordVisible = !this.isPasswordVisible;
+    this.togglePasswordIcon()
+  }
+
+  togglePasswordIcon(){
+   this.passwordIconSource = this.passwordIconSource === this.showPasswordImage ? this.hidePasswordImage : this.showPasswordImage
   }
 }

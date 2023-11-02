@@ -3,11 +3,20 @@
 
     <p class="register-phrase">Register</p>
 
-    <app-defaultinput class="name-input" formControlName="name-input" placeholder="Your Name" type="text"></app-defaultinput>
-    <app-defaultinput class="email-input" formControlName="email-input" placeholder="Email" type="email"></app-defaultinput>
-    <app-passwordinput class="password-input" formControlName="password-input"></app-passwordinput>
+    <app-defaultinput class="name-input" formControlName="name-input" placeholder="Username" type="text"
+      [control]="inputGroup.get('name-input')" [validationMessages]="nameValidationMessages"></app-defaultinput>
 
-    <app-defaultbutton buttonClass="confirm" buttonText="Confirm" (click)="register()"></app-defaultbutton>
+    <app-defaultinput class="email-input" formControlName="email-input" placeholder="Email" type="email"
+      [control]="inputGroup.get('email-input')" [validationMessages]="emailValidationMessages"></app-defaultinput>
+
+    <app-defaultinput class="password-input" formControlName="password-input" placeholder="Password" type="password"
+      [control]="inputGroup.get('password-input')" [validationMessages]="passwordValidationMessages"></app-defaultinput>
+
+    <app-defaultbutton buttonClass="confirm" buttonText="Confirm" (click)="register()"
+      [disabled]="inputGroup.invalid"></app-defaultbutton>
+
+    <p class="request-error-phrase">{{ errorMessage }}</p>
+
     <div class="phrase-container">
       <p class="alreadyregistered-phrase">Already registered?</p>
       <p class="login-phrase" (click)="redirectToLogin()">Login</p>

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { RegisterRequest } from '../models/register-request';
+import { Observable , throwError} from 'rxjs';
+import { RegisterRequest} from '../models/register-request';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,9 @@ export class AuthService {
       Password: password
     };
 
-    return this.http.post("https://localhost:7135/auth/register", registerRequest);
+    return this.http.post("https://localhost:7135/auth/register", registerRequest)
+       .pipe(
+        catchError(error => throwError(error)));
   }
 
 }

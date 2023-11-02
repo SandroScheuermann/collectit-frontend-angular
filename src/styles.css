@@ -22,11 +22,6 @@ span {
 html, body {
     font-family: 'Ubuntu';
     height:100%;
-    background-color: #53354A;
     color: white;
 }
 
-button {
-    background-color: white;
-    color: #351F39; /* Cor do texto dentro do botão */
-}
