@@ -17,6 +17,7 @@ import { DefaultbuttonComponent } from './shared/defaultbutton/defaultbutton.com
 import { LoginComponent } from './views/login/login.component';
 import { MicroLoaderComponent } from './animations/microloader/microloader.component';
 import { AnimatedbackgroundComponent } from './animations/animatedbackground/animatedbackground.component';
+import { WelcomeComponent } from './views/welcome/welcome.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { AnimatedbackgroundComponent } from './animations/animatedbackground/ani
     DefaultbuttonComponent,
     LoginComponent,
     MicroLoaderComponent,
-    AnimatedbackgroundComponent
+    AnimatedbackgroundComponent,
+    WelcomeComponent
   ],
   imports: [
     BrowserModule,

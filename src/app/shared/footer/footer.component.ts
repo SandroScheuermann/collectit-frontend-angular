@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
 
+  constructor(private authService: AuthService) { }
+
+  logout(): void {
+    this.authService.logout();
+  }
+
+  get isUserLoggedIn(): boolean{
+    return this.authService.isAuthenticated();
+  }
 }

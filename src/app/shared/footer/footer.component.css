@@ -1,0 +1,13 @@
+.logout {
+    position: fixed;
+    bottom: 5px;  /* Distância da borda inferior */
+    right: 20px;   /* Distância da borda direita */
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+.logout:hover{
+  color: rgb(53, 31, 57);
+}
+

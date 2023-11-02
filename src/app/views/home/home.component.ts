@@ -12,7 +12,7 @@ export class HomeComponent {
   constructor(private router: Router, private microLoadingService: MicroLoadingService) {
   }
 
-  redirecionarParaRegistro() {
-    this.router.navigate(['/register']);
+  redirectToLoginPage() {
+    this.router.navigate(['/login']);
   }
 }

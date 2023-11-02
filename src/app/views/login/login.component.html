@@ -1,15 +1,21 @@
 <div class="pagina">
-  <div class="input-container">
+  <div class="input-container" [formGroup]="inputGroup">
 
     <p class="login-phrase">Login</p>
 
-    <app-defaultinput class="email-input" placeholder="Email" type="email"></app-defaultinput>
-    <app-defaultinput class="password-input" placeholder="Password" type="password"></app-defaultinput>
+    <app-defaultinput class="email-input" formControlName="email-input" placeholder="Email" type="email"
+      [control]="inputGroup.get('email-input')"></app-defaultinput>
 
-    <app-defaultbutton buttonClass="confirm" buttonText="Confirm"></app-defaultbutton>
+    <app-defaultinput class="password-input" formControlName="password-input" placeholder="Password" type="password"
+      [control]="inputGroup.get('password-input')"></app-defaultinput>
+
+    <app-defaultbutton buttonClass="confirm" buttonText="Confirm" (click)="login()"></app-defaultbutton>
+
     <div class="phrase-container">
       <p class="notregistered-phrase">Not registered?</p>
       <p class="register-phrase" (click)="redirectToRegister()">Register now!</p>
     </div>
+
+    <p class="request-error-phrase">{{ errorMessage }}</p>
   </div>
 </div>

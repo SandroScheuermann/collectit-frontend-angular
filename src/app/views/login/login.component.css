@@ -28,10 +28,6 @@
     text-align: center;
 }
 
-.register-button {
-  height: 1000px;
-}
-
 .notregistered-phrase{
   color : gray;
   opacity: 0.6;
@@ -40,4 +36,12 @@
 .register-phrase{
   color: white;
   cursor: pointer;
+}
+
+.register-phrase:hover{
+  color: rgb(53, 31, 57);
+}
+
+.request-error-phrase{
+  color: rgba(200, 0, 0, 1);
 }

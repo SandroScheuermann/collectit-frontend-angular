@@ -13,15 +13,12 @@
   transition: filter 0.3s ease;
 }
 
-span {
-  font-family: 'Ubuntu';
-  background-color: #53354A;
-  color: white;
-}
-
 html, body {
     font-family: 'Ubuntu';
     height:100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     color: white;
 }
 

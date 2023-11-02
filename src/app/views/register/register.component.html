@@ -15,11 +15,11 @@
     <app-defaultbutton buttonClass="confirm" buttonText="Confirm" (click)="register()"
       [disabled]="inputGroup.invalid"></app-defaultbutton>
 
-    <p class="request-error-phrase">{{ errorMessage }}</p>
-
     <div class="phrase-container">
       <p class="alreadyregistered-phrase">Already registered?</p>
       <p class="login-phrase" (click)="redirectToLogin()">Login</p>
     </div>
+
+    <p class="request-error-phrase">{{ errorMessage }}</p>
   </div>
 </div>

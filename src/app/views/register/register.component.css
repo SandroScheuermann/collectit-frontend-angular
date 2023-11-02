@@ -42,6 +42,10 @@
   color: white;
 }
 
+.login-phrase:hover{
+  color: rgb(53, 31, 57);
+}
+
 .request-error-phrase{
   color: rgba(200, 0, 0, 1);
 }
