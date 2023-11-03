@@ -26,7 +26,7 @@ export class AuthService {
       Password: password
     };
 
-    return this.http.post(API_URL + "/auth/register", registerRequest)
+    return this.http.post(API_URL + "auth/register", registerRequest)
       .pipe(
         catchError(error => throwError(error)));
   }
@@ -38,7 +38,7 @@ export class AuthService {
       Password: password
     };
 
-    return this.http.post<string>(API_URL + "/auth/login", loginRequest)
+    return this.http.post<string>(API_URL + "auth/login", loginRequest)
       .pipe(
         tap(response => {
 
