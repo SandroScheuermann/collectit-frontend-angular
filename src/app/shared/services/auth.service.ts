@@ -5,8 +5,11 @@ import { catchError, tap } from 'rxjs/operators';
 import { RegisterRequest } from 'src/app/views/register/models/register-request';
 import { LoginRequest } from 'src/app/views/login/models/login-request';
 import { Router } from '@angular/router';
-import { JwtPayload, jwtDecode } from "jwt-decode";
+import { jwtDecode } from "jwt-decode";
 import { LoginResponse } from 'src/app/views/login/models/login-response';
+import { environment } from 'src/environments/environment';
+
+const API_URL = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +26,7 @@ export class AuthService {
       Password: password
     };
 
-    return this.http.post("https://localhost:7135/auth/register", registerRequest)
+    return this.http.post(API_URL + "/auth/register", registerRequest)
       .pipe(
         catchError(error => throwError(error)));
   }
@@ -35,7 +38,7 @@ export class AuthService {
       Password: password
     };
 
-    return this.http.post<string>("https://localhost:7135/auth/login", loginRequest)
+    return this.http.post<string>(API_URL + "/auth/login", loginRequest)
       .pipe(
         tap(response => {
 
