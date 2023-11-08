@@ -10,7 +10,7 @@ env:
 
 jobs:
   deploy:
-    name: Deploy CollectIt-Angular-Frontend 
+    name: Deploy muscler 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
