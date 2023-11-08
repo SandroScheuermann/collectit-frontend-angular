@@ -1,4 +1,4 @@
 export const environment = {
   production: false,
-  apiUrl: 'https://collectit-webapi.fly.dev/'
+  apiUrl: 'https://muscler-webapi.fly.dev/'
 };
