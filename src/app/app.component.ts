@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
   animations: [simpleFadeAnimation],
 })
 export class AppComponent {
-  title = 'GameCollector.Front';
+  title = 'Muscler';
 
   isMicroLoading$: Observable<boolean>;
 
