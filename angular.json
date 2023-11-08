@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "GameCollector.Front": {
+    "muscler": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/game-collector.front",
+            "outputPath": "dist/muscler",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "GameCollector.Front:build:production"
+              "browserTarget": "muscler:build:production"
             },
             "development": {
-              "browserTarget": "GameCollector.Front:build:development"
+              "browserTarget": "muscler:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "GameCollector.Front:build"
+            "browserTarget": "muscler:build"
           }
         },
         "test": {
