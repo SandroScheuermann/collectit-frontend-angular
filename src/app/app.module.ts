@@ -18,6 +18,7 @@ import { LoginComponent } from './views/login/login.component';
 import { MicroLoaderComponent } from './animations/microloader/microloader.component';
 import { AnimatedbackgroundComponent } from './animations/animatedbackground/animatedbackground.component';
 import { WelcomeComponent } from './views/welcome/welcome.component';
+import { EmailConfirmationComponent } from './views/register/email-confirmation/email-confirmation.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { WelcomeComponent } from './views/welcome/welcome.component';
     LoginComponent,
     MicroLoaderComponent,
     AnimatedbackgroundComponent,
-    WelcomeComponent
+    WelcomeComponent,
+    EmailConfirmationComponent,
   ],
   imports: [
     BrowserModule,

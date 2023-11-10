@@ -1,0 +1,20 @@
+<div *ngIf="!isEmailConfirmed" class="page">
+
+  <p class="phrase">
+    A confirmation link was sent to
+    <span>{{ getConfirmEmail }}</span>
+  </p>
+
+  <app-defaultbutton buttonClass="ok-button" buttonText="Ok" (click)="redirectToLoginPage()"></app-defaultbutton>
+
+</div>
+
+<div *ngIf="isEmailConfirmed" class="page">
+
+  <p class="phrase">
+    Email successfully confirmed!
+  </p>
+
+  <app-defaultbutton buttonClass="ok-button" buttonText="Ok" (click)="redirectToLoginPage()"></app-defaultbutton>
+
+</div>

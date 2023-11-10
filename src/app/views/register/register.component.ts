@@ -15,7 +15,6 @@ export class RegisterComponent {
   errorMessage: string = '';
   inputGroup: FormGroup;
 
-
   constructor(private router: Router, private authService: AuthService, private microLoadingService: MicroLoadingService) {
     this.inputGroup = new FormGroup({
       'name-input': new FormControl('', this.nameValidators),
@@ -35,22 +34,29 @@ export class RegisterComponent {
 
       this.authService.register(name, email, password).subscribe({
         error: (err) => { this.microLoadingService.hide(), this.errorMessage = err.error },
-        complete: () => { this.microLoadingService.hide(), this.redirectToLogin() }
+        complete: () => { this.microLoadingService.hide(), this.redirectToEmailConfirmationPage(email) }
       });
-    }
+      }
   }
 
   redirectToLogin() {
     this.router.navigate(['/login']);
   }
 
+  redirectToEmailConfirmationPage(email : string){
+    localStorage.setItem("ConfirmEmail", email);
+    this.router.navigate(['/register/email-confirmation']);
+  }
+
   nameValidators = [Validators.required, Validators.minLength(4)];
+
   nameValidationMessages = {
     required: 'Username is required.',
     minlength: 'Name must be at least 4 characters'
   };
 
   emailValidators = [Validators.required, Validators.email]
+
   emailValidationMessages = {
     required: 'Email is required',
     email: 'Incorrect email format'
