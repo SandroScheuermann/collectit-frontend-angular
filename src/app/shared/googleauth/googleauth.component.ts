@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { AuthService } from '../services/auth.service';
+import { MicroLoadingService } from 'src/app/animations/microloader/service/microloading.service';
 
 @Component({
   selector: 'app-googleauth',
@@ -10,7 +11,7 @@ export class GoogleauthComponent implements OnInit {
 
   private scriptTag: HTMLScriptElement | null = null;
 
-  constructor(private authService: AuthService, private elementRef: ElementRef) {
+  constructor(private authService: AuthService, private elementRef: ElementRef, private microLoadingService: MicroLoadingService) {
   }
 
   ngOnInit() {
@@ -23,9 +24,12 @@ export class GoogleauthComponent implements OnInit {
   }
 
   handleCredentialResponse(response: any) {
+
+    this.microLoadingService.show();
+
     this.authService.googleOAuthLogin(response.credential).subscribe({
-      next: () => this.authService.redirectToWelcomePage(),
-      error: (erro) => console.error('Error', erro)
+      next: () => { this.authService.redirectToWelcomePage(); this.microLoadingService.hide(); },
+      error: (erro) => { console.error('Error', erro); this.microLoadingService.hide(); }
     });
   }
 
