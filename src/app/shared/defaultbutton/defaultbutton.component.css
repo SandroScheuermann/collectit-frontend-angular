@@ -2,18 +2,12 @@
   background: linear-gradient(to right, white 50%, #BF2051 50%);
   background-size: 200% 100%;
   background-position: 100% 0;
-
   color: white;
-
   border: none;
   border-radius: 65px;
-
   cursor: pointer;
-
   font-family: "Ubuntu";
-
   transition: background-position 0.5s;
-
   margin-top: 10px;
   width: 350px;
   height: 80px;

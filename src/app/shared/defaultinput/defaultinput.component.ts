@@ -52,7 +52,7 @@ export class DefaultinputComponent implements ControlValueAccessor {
     if (this.control) {
       for (const errorKey in this.control.errors) {
         if (this.control.errors.hasOwnProperty(errorKey) && this.control.touched) {
-          return this.validationMessages[errorKey] || 'Campo inválido';
+          return this.validationMessages[errorKey] || 'Invalid field';
         }
       }
     }

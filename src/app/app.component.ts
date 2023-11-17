@@ -10,8 +10,8 @@ import { Observable } from 'rxjs';
   animations: [simpleFadeAnimation],
 })
 export class AppComponent {
-  title = 'Muscler';
 
+  title = 'Muscler';
   isMicroLoading$: Observable<boolean>;
 
   constructor(private microLoadingService: MicroLoadingService) {
@@ -21,5 +21,8 @@ export class AppComponent {
   prepareRoute(outlet: any) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.animation;
   }
+
+
+
 
 }

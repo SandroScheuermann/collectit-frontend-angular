@@ -1,7 +1,16 @@
-.pagina{
+.page {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  align-items: center;
+  justify-content: center;
+}
+
+.auth-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
 }
 
 .input-container{
@@ -10,8 +19,14 @@
   align-items: center;
   justify-content: center;
   align-content: center;
-  flex-grow: 1;
-  gap: 20px;
+}
+
+.oauth2-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .phrase-container{
@@ -27,10 +42,13 @@
     font-size: 40px;
     text-align: center;
 }
+.or-phrase{
+    gap: 1px;
+}
 
 .notregistered-phrase{
-  color : gray;
-  opacity: 0.6;
+  color : whitesmoke;
+  opacity: 0.5;
 }
 
 .register-phrase{

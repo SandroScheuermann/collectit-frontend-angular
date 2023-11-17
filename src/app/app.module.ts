@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule} from '@angular/forms'
+import { FormsModule } from '@angular/forms'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -19,6 +19,7 @@ import { MicroLoaderComponent } from './animations/microloader/microloader.compo
 import { AnimatedbackgroundComponent } from './animations/animatedbackground/animatedbackground.component';
 import { WelcomeComponent } from './views/welcome/welcome.component';
 import { EmailConfirmationComponent } from './views/register/email-confirmation/email-confirmation.component';
+import { GoogleauthComponent } from './shared/googleauth/googleauth.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { EmailConfirmationComponent } from './views/register/email-confirmation/
     AnimatedbackgroundComponent,
     WelcomeComponent,
     EmailConfirmationComponent,
+    GoogleauthComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,8 +46,9 @@ import { EmailConfirmationComponent } from './views/register/email-confirmation/
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    ],
-  providers: [],
+  ],
+  providers: [
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

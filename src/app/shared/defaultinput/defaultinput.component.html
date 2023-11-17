@@ -1,10 +1,10 @@
 <div class="input-wrapper">
+
   <input [type]="isPasswordVisible ? 'text' : type" class="defaultinput" [placeholder]="placeholder" [(ngModel)]="value"
     (ngModelChange)="updateValue($event)" [class.invalid]="control?.invalid && control?.touched">
 
   <img *ngIf="type === 'password'" (click)="togglePasswordVisibility()" [src]="passwordIconSource"
     alt="Toggle password visibility" class="toggle-password-icon">
-
 
   <div *ngIf="control?.invalid && control?.touched" class="error-container" (mouseover)="showValidationMessage = true"
     (mouseout)="showValidationMessage = false">
@@ -14,5 +14,6 @@
     <div *ngIf="showValidationMessage" class="tooltip">
       {{ validationMessage }}
     </div>
+
   </div>
 </div>
