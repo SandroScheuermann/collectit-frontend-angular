@@ -23,8 +23,36 @@ header::after {
 
 .icon {
     padding-top: 15px;
+    padding-left: 15px;
     width: 85px;
     height: auto;
     cursor: pointer;
 }
 
+@media (max-width: 600px) {
+
+  header {
+      height: 100px;
+      position: relative;
+      padding: 0 1%;
+  }
+
+  header::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 1%;
+      right: 0;
+      height: 1px;
+      opacity: 0.5;
+  }
+
+  .icon {
+      padding-top: 15px;
+      padding-left: 15px;
+      width: 70px;
+      height: auto;
+      cursor: pointer;
+  }
+
+}

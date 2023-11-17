@@ -46,3 +46,46 @@
 app-header{
   margin-bottom: 5px;
 }
+
+
+@media (max-width: 600px) {
+
+  .container-centralizado {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 150px;
+  }
+
+  .ponto {
+     display: block;
+     width: 10px;
+     height: 10px;
+     background-color: white;
+     border-radius: 50%;
+     margin: 10px 0;
+  }
+
+  .pontos{
+    padding-bottom: 10px;
+  }
+
+  .logo {
+     width: 320px;
+     height: 160px;
+     position: relative;
+     bottom: 0;
+     left: 0;
+     margin-top: 10px;
+     max-width: 100%;
+  }
+
+  .frase {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 10px;
+    max-width: 80%;
+  }
+}
